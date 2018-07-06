@@ -35,9 +35,9 @@ int main() {
     std::cout << "LCM of 9,9 is " << calculate_lcm_from_vector(first_test) << "\n";
 
     std::vector<int> second_test;
-    second_test.push_back(8);
-    second_test.push_back(8);
     second_test.push_back(10);
-    std::cout << "LCM of 8,8,10 is " << calculate_lcm_from_vector(second_test) << "\n";
+    second_test.push_back(8);
+    second_test.push_back(8);
+    std::cout << "LCM of 10,8,8 is " << calculate_lcm_from_vector(second_test) << "\n";
     return 0;
 }
