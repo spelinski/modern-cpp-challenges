@@ -8,10 +8,10 @@ run: static-analysis
 
 static-analysis: build
 		$(DOCKER) cppcheck --std=c++11 $(CPPFILES) --enable=all -q -I. --error-exitcode=1 && \
-		$(DOCKER) clang-tidy $(CPPFILES) --checks="*" --warnings-as-errors="*" -- -I. -std=c++11
+		$(DOCKER) clang-tidy $(CPPFILES) --checks="*" --warnings-as-errors="*" -- -I. -std=c++1z
 
 build:
-		$(DOCKER) g++-7 -g $(CPPFILES) -I. -std=c++11 -o test -Werror -Wall -Wextra -pedantic
+		$(DOCKER) g++-7 -g $(CPPFILES) -I. -std=c++17 -o test -Werror -Wall -Wextra -pedantic
 
 docker:
 		docker build -t modern-cpp .

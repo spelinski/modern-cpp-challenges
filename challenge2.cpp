@@ -1,5 +1,7 @@
 #include <iostream>
 
+//Learned this would be better using std::gcd that is included in c++17
+
 unsigned int greatest_common_divisor(unsigned int first_number, unsigned int second_number) {
     for(auto i=first_number; i>0; --i) {
         if((first_number%i==0) and (second_number%i==0)) {
