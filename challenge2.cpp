@@ -1,8 +1,8 @@
 #include <iostream>
 
-unsigned int greatest_common_divisor(unsigned int smaller_number, unsigned int larger_number) {
-    for(auto i=smaller_number; i>0; --i) {
-        if((smaller_number%i==0) and (larger_number%i==0)) {
+unsigned int greatest_common_divisor(unsigned int first_number, unsigned int second_number) {
+    for(auto i=first_number; i>0; --i) {
+        if((first_number%i==0) and (second_number%i==0)) {
             return i;
         }
     }
@@ -16,12 +16,7 @@ int main(){
     std::cin >>  first_num;
     std::cout << "insert second number \n";
     std::cin >>  second_num;
-
-    if(first_num < second_num) {
-        std::cout << "GCD is " << greatest_common_divisor(first_num, second_num) << "\n";
-    } else {
-        std::cout << "GCD is " << greatest_common_divisor(second_num, first_num) << "\n";
-    }
+    std::cout << "GCD is " << greatest_common_divisor(first_num, second_num) << "\n";
 
     return 0;
 }
