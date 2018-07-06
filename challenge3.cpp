@@ -2,7 +2,7 @@
 #include <numeric>
 #include <vector>
 
-
+/** leaving as initial solve and changing it to use accumulate
 int recursive_lcm_function(std::vector<int> list_of_numbers, int passed_number) {
     int current_number = list_of_numbers.back();
     list_of_numbers.pop_back();
@@ -20,6 +20,11 @@ int calculate_lcm_from_vector(std::vector<int> list_of_numbers) {
     auto number_to_pass_in = list_of_numbers.back();
     list_of_numbers.pop_back();
     return recursive_lcm_function(list_of_numbers, number_to_pass_in);
+}
+*/
+
+int calculate_lcm_from_vector(std::vector<int> list_of_numbers) {
+    return std::accumulate(list_of_numbers.begin(),list_of_numbers.end(),1,[](int a, int b) {return std::lcm(a,b);});
 }
 
 int main() {
